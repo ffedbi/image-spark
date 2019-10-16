@@ -1,8 +1,8 @@
 const express = require('express');
 const serveStatic = require("serve-static")
 const path = require('path');
-const data = require('./dist/data.json');
-const port = process.env.PORT || 5000;
+const data = require('./data.json');
+const port = process.env.PORT || 8080;
 
 app = express();
 app.use(serveStatic(path.join(__dirname, 'dist')));
@@ -17,4 +17,4 @@ app.get("/users", (req, res, next) => {
     res.send(data);
 });
   
-app.listen(port, () => console.log('Example app listening on port 5000!'));
+app.listen(port, () => console.log('Example app listening on port 8080!'));
