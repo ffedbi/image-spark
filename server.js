@@ -3,8 +3,8 @@ const serveStatic = require("serve-static");
 const path = require('path');
 const data = require('./data.json');
 const port = process.env.PORT || 5000;
+const app = express();
 
-app = express();
 app.use(serveStatic(path.join(__dirname, 'dist')));
 
 app.use(function (req, res, next) {
